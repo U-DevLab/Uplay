@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>U-Play</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="carplay" id="app" style="display:none">
+    <div class="col-left">
+      <div class="top">
+        <div class="brand"><div class="dot"></div>U-Play</div>
+      </div>
+
+      <form class="search" id="searchForm" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9a9aa2" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="text" maxlength="80" placeholder="">
+        <div class="spinner" id="spinner"></div>
+      </form>
+
+      <div class="tabs">
+        <div class="tab on" data-tab="results">Resultados</div>
+        <div class="tab" data-tab="queue">Fila <span id="queueCount"></span></div>
+        <div class="tab" data-tab="history">Recientes</div>
+      </div>
+
+      <div class="list" id="list"></div>
+      <div class="toast" id="toast"></div>
+    </div>
+
+    <div class="col-right">
+      <div class="closebar"><div class="close" id="closeBtn">✕</div></div>
+      <div class="bigcover" id="bigCover"><div class="nocover">♪</div></div>
+      <div class="nowtitle" id="nowTitle"></div>
+      <div class="nowartist" id="nowArtist"></div>
+      <div class="progress">
+        <div class="track seek" id="seekBar"><div class="fill" id="progFill"></div></div>
+        <div class="times"><span id="tCur">0:00</span><span id="tDur">0:00</span></div>
+      </div>
+      <div class="controls">
+        <div class="ctl">
+          <div class="cbtn" id="prevBtn"><svg viewBox="0 0 24 24" fill="#ededed"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></div>
+          <div class="bigplay" id="playBtn">
+            <svg id="icoPause" viewBox="0 0 24 24" fill="#111113"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <svg id="icoPlay" viewBox="0 0 24 24" fill="#111113" style="display:none"><path d="M8 5l12 7-12 7z"/></svg>
+          </div>
+          <div class="cbtn" id="nextBtn"><svg viewBox="0 0 24 24" fill="#ededed"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="vol">
+          <svg viewBox="0 0 24 24" fill="#9a9aa2"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8a5 5 0 010 8" stroke="#9a9aa2" stroke-width="2" fill="none"/></svg>
+          <input type="range" id="vol" min="0" max="100" value="50">
+        </div>
+      </div>
+      <div class="who" id="who"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
